@@ -28,6 +28,7 @@ app.MapGet("/getDesign/{id}", async (PixelArtContext context, int id, Cancellati
 
 app.MapPost("/createDesign", async (PixelArtContext context, GetDesignDTO getDesign, CancellationToken cancellationToken) => {
     var designType = await context.DesignTypes.FirstOrDefaultAsync(type => type.Id == getDesign.DesignTypeId, cancellationToken);
+    var designPhotos = getDesign.DesignPhotos;
     if(designType == null) 
         return Results.NotFound("Invalid Design Type");
     else{

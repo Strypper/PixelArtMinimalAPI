@@ -5,6 +5,7 @@ public class GetDesignDTO : BaseDTO{
     public int DesignTypeId { get; set; }
     public string? Colors { get; set; }
     public DateTime DateUploaded { get; set; }
+    public List<IFormFile> DesignPhotos { get; set; } = new List<IFormFile>();
 }
 
 public static class DesignExtensions{
