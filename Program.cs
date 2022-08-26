@@ -40,6 +40,10 @@ app.MapPost("/createDesign", async (PixelArtContext context, GetDesignDTO getDes
     }
 }).WithName("createDesign");
 
+app.MapPost("/UploadDesignMedia", async (IFormFile media) => {
+    return Results.Ok("Okay");
+}).Accepts<IFormFile>("multipart/form-data");
+
 app.MapPut("/updateDesign", async (PixelArtContext context, GetDesignDTO getDesign) => {
 
 });
